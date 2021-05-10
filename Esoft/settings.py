@@ -17,7 +17,6 @@ import dj_database_url
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
@@ -25,10 +24,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'p^jn$$ggkl^p8w0=oeg^+1k8*@yczwx7$5%oc4z81=2ps(nz%e'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['*']
-
+ALLOWED_HOSTS = ['e-soft-kc.herokuapp.com']
 
 # Application definition
 
@@ -74,26 +72,26 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Esoft.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-'''
+
+"""
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'esoft',
-        'USER': 'kaique',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'E-soft',
+        'USER:': 'kaique',
         'PASSWORD': 'Python@$123',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
-'''
+"""
+
 DATABASES = {
     'default': dj_database_url.config()
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -113,7 +111,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
@@ -126,7 +123,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
